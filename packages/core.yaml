@@ -15,108 +15,108 @@ external_components:
 esphome:
   name: ${device_name}
   min_version: 2023.3.0
-  friendly_name: ${humanly_name}
+  friendly_name: ${friendly_name}
   on_boot:
     priority: -100
     then:
       lambda: !lambda |-
-        id(${device_name}_climate).set_beeper_state(false);
-        id(${device_name}_climate).set_force_mode_state(false);
+        id(${device_name}climate).set_beeper_state(false);
+        id(${device_name}climate).set_force_mode_state(false);
 
         if (id(display_mode).state) {
-          id(${device_name}_climate).set_display_state(true);
+          id(${device_name}climate).set_display_state(true);
         } else {
-          id(${device_name}_climate).set_display_state(false);
+          id(${device_name}climate).set_display_state(false);
         }
         if (id(ledflash_mode).state) {
-          id(${device_name}_climate).set_module_display_state(true);
+          id(${device_name}climate).set_module_display_state(true);
         } else {
-          id(${device_name}_climate).set_module_display_state(false);
+          id(${device_name}climate).set_module_display_state(false);
         }
 
         if (id(vswing).active_index() == 0) {
-          id(${device_name}_climate)
+          id(${device_name}climate)
               .set_vertical_swing_direction(
                   esphome::tclac::VerticalSwingDirection::UP_DOWN);
         } else if (id(vswing).active_index() == 1) {
-          id(${device_name}_climate)
+          id(${device_name}climate)
               .set_vertical_swing_direction(
                   esphome::tclac::VerticalSwingDirection::UPSIDE);
         } else if (id(vswing).active_index() == 2) {
-          id(${device_name}_climate)
+          id(${device_name}climate)
               .set_vertical_swing_direction(
                   esphome::tclac::VerticalSwingDirection::DOWNSIDE);
         }
 
         if (id(hswing).active_index() == 0) {
-          id(${device_name}_climate)
+          id(${device_name}climate)
               .set_horizontal_swing_direction(
                   esphome::tclac::HorizontalSwingDirection::LEFT_RIGHT);
         } else if (id(hswing).active_index() == 1) {
-          id(${device_name}_climate)
+          id(${device_name}climate)
               .set_horizontal_swing_direction(
                   esphome::tclac::HorizontalSwingDirection::LEFTSIDE);
         } else if (id(hswing).active_index() == 2) {
-          id(${device_name}_climate)
+          id(${device_name}climate)
               .set_horizontal_swing_direction(
                   esphome::tclac::HorizontalSwingDirection::CENTER);
         } else if (id(hswing).active_index() == 3) {
-          id(${device_name}_climate)
+          id(${device_name}climate)
               .set_horizontal_swing_direction(
                   esphome::tclac::HorizontalSwingDirection::RIGHTSIDE);
         }
 
         if (id(vfixing).active_index() == 0) {
-          id(${device_name}_climate)
+          id(${device_name}climate)
               .set_vertical_airflow(esphome::tclac::AirflowVerticalDirection::LAST);
         } else if (id(vfixing).active_index() == 1) {
-          id(${device_name}_climate)
+          id(${device_name}climate)
               .set_vertical_airflow(esphome::tclac::AirflowVerticalDirection::MAX_UP);
         } else if (id(vfixing).active_index() == 2) {
-          id(${device_name}_climate)
+          id(${device_name}climate)
               .set_vertical_airflow(esphome::tclac::AirflowVerticalDirection::UP);
         } else if (id(vfixing).active_index() == 3) {
-          id(${device_name}_climate)
+          id(${device_name}climate)
               .set_vertical_airflow(esphome::tclac::AirflowVerticalDirection::CENTER);
         } else if (id(vfixing).active_index() == 4) {
-          id(${device_name}_climate)
+          id(${device_name}climate)
               .set_vertical_airflow(esphome::tclac::AirflowVerticalDirection::DOWN);
         } else if (id(vfixing).active_index() == 5) {
-          id(${device_name}_climate)
+          id(${device_name}climate)
               .set_vertical_airflow(esphome::tclac::AirflowVerticalDirection::MAX_DOWN);
         }
 
         if (id(hfixing).active_index() == 0) {
-          id(${device_name}_climate)
+          id(${device_name}climate)
               .set_horizontal_airflow(esphome::tclac::AirflowHorizontalDirection::LAST);
         } else if (id(hfixing).active_index() == 1) {
-          id(${device_name}_climate)
+          id(${device_name}climate)
               .set_horizontal_airflow(
                   esphome::tclac::AirflowHorizontalDirection::MAX_LEFT);
         } else if (id(hfixing).active_index() == 2) {
-          id(${device_name}_climate)
+          id(${device_name}climate)
               .set_horizontal_airflow(esphome::tclac::AirflowHorizontalDirection::LEFT);
         } else if (id(hfixing).active_index() == 3) {
-          id(${device_name}_climate)
+          id(${device_name}climate)
               .set_horizontal_airflow(
                   esphome::tclac::AirflowHorizontalDirection::CENTER);
         } else if (id(hfixing).active_index() == 4) {
-          id(${device_name}_climate)
+          id(${device_name}climate)
               .set_horizontal_airflow(esphome::tclac::AirflowHorizontalDirection::RIGHT);
         } else if (id(hfixing).active_index() == 5) {
-          id(${device_name}_climate)
+          id(${device_name}climate)
               .set_horizontal_airflow(
                   esphome::tclac::AirflowHorizontalDirection::MAX_RIGHT);
         }
         if (id(beep_mode).state) {
-          id(${device_name}_climate).set_beeper_state(true);
+          id(${device_name}climate).set_beeper_state(true);
         } else {
-          id(${device_name}_climate).set_beeper_state(false);
+          id(${device_name}climate).set_beeper_state(false);
         }
         if (id(force_mode).state) {
-          id(${device_name}_climate).set_force_mode_state(true);
+          id(${device_name}climate).set_force_mode_state(true);
         } else {
-          id(${device_name}_climate).set_force_mode_state(false);
+          id(${device_name}climate).set_force_mode_state(false);
         }
 
 uart:
@@ -163,11 +163,11 @@ switch:
     on_turn_on:
       then:
         lambda: !lambda |-
-          id(${device_name}_climate).set_beeper_state(true);
+          id(${device_name}climate).set_beeper_state(true);
     on_turn_off:
       then:
         lambda: !lambda |-
-          id(${device_name}_climate).set_beeper_state(false);
+          id(${device_name}climate).set_beeper_state(false);
 
   # Temperature setpoint display on the indoor unit body, on by default
   - name: Display
@@ -180,11 +180,11 @@ switch:
     on_turn_on:
       then:
         lambda: !lambda |-
-          id(${device_name}_climate).set_display_state(true);
+          id(${device_name}climate).set_display_state(true);
     on_turn_off:
       then:
         lambda: !lambda |-
-          id(${device_name}_climate).set_display_state(false);
+          id(${device_name}climate).set_display_state(false);
 
   # LED indication of data exchange with the air conditioner, off by default
   - name: Display on module
@@ -197,11 +197,11 @@ switch:
     on_turn_on:
       then:
         lambda: !lambda |-
-          id(${device_name}_climate).set_module_display_state(true);
+          id(${device_name}climate).set_module_display_state(true);
     on_turn_off:
       then:
         lambda: !lambda |-
-          id(${device_name}_climate).set_module_display_state(false);
+          id(${device_name}climate).set_module_display_state(false);
 
   - name: Force config
     platform: template
@@ -213,11 +213,11 @@ switch:
     on_turn_on:
       then:
         lambda: !lambda |-
-          id(${device_name}_climate).set_force_mode_state(true);
+          id(${device_name}climate).set_force_mode_state(true);
     on_turn_off:
       then:
         lambda: !lambda |-
-          id(${device_name}_climate).set_force_mode_state(false);
+          id(${device_name}climate).set_force_mode_state(false);
 
 # - Dropdown lists
 select:
@@ -236,15 +236,15 @@ select:
       then:
         lambda: !lambda |-
           if (id(vswing).active_index() == 0) {
-            id(${device_name}_climate)
+            id(${device_name}climate)
                 .set_vertical_swing_direction(
                     esphome::tclac::VerticalSwingDirection::UP_DOWN);
           } else if (id(vswing).active_index() == 1) {
-            id(${device_name}_climate)
+            id(${device_name}climate)
                 .set_vertical_swing_direction(
                     esphome::tclac::VerticalSwingDirection::UPSIDE);
           } else if (id(vswing).active_index() == 2) {
-            id(${device_name}_climate)
+            id(${device_name}climate)
                 .set_vertical_swing_direction(
                     esphome::tclac::VerticalSwingDirection::DOWNSIDE);
           }
@@ -265,19 +265,19 @@ select:
       then:
         lambda: !lambda |-
           if (id(hswing).active_index() == 0) {
-            id(${device_name}_climate)
+            id(${device_name}climate)
                 .set_horizontal_swing_direction(
                     esphome::tclac::HorizontalSwingDirection::LEFT_RIGHT);
           } else if (id(hswing).active_index() == 1) {
-            id(${device_name}_climate)
+            id(${device_name}climate)
                 .set_horizontal_swing_direction(
                     esphome::tclac::HorizontalSwingDirection::LEFTSIDE);
           } else if (id(hswing).active_index() == 2) {
-            id(${device_name}_climate)
+            id(${device_name}climate)
                 .set_horizontal_swing_direction(
                     esphome::tclac::HorizontalSwingDirection::CENTER);
           } else if (id(hswing).active_index() == 3) {
-            id(${device_name}_climate)
+            id(${device_name}climate)
                 .set_horizontal_swing_direction(
                     esphome::tclac::HorizontalSwingDirection::RIGHTSIDE);
           }
@@ -300,24 +300,24 @@ select:
       then:
         lambda: !lambda |-
           if (id(vfixing).active_index() == 0) {
-            id(${device_name}_climate)
+            id(${device_name}climate)
                 .set_vertical_airflow(esphome::tclac::AirflowVerticalDirection::LAST);
           } else if (id(vfixing).active_index() == 1) {
-            id(${device_name}_climate)
+            id(${device_name}climate)
                 .set_vertical_airflow(
                     esphome::tclac::AirflowVerticalDirection::MAX_UP);
           } else if (id(vfixing).active_index() == 2) {
-            id(${device_name}_climate)
+            id(${device_name}climate)
                 .set_vertical_airflow(esphome::tclac::AirflowVerticalDirection::UP);
           } else if (id(vfixing).active_index() == 3) {
-            id(${device_name}_climate)
+            id(${device_name}climate)
                 .set_vertical_airflow(
                     esphome::tclac::AirflowVerticalDirection::CENTER);
           } else if (id(vfixing).active_index() == 4) {
-            id(${device_name}_climate)
+            id(${device_name}climate)
                 .set_vertical_airflow(esphome::tclac::AirflowVerticalDirection::DOWN);
           } else if (id(vfixing).active_index() == 5) {
-            id(${device_name}_climate)
+            id(${device_name}climate)
                 .set_vertical_airflow(
                     esphome::tclac::AirflowVerticalDirection::MAX_DOWN);
           }
@@ -340,32 +340,32 @@ select:
       then:
         lambda: !lambda |-
           if (id(hfixing).active_index() == 0) {
-            id(${device_name}_climate)
+            id(${device_name}climate)
                 .set_horizontal_airflow(
                     esphome::tclac::AirflowHorizontalDirection::LAST);
           } else if (id(hfixing).active_index() == 1) {
-            id(${device_name}_climate)
+            id(${device_name}climate)
                 .set_horizontal_airflow(
                     esphome::tclac::AirflowHorizontalDirection::MAX_LEFT);
           } else if (id(hfixing).active_index() == 2) {
-            id(${device_name}_climate)
+            id(${device_name}climate)
                 .set_horizontal_airflow(
                     esphome::tclac::AirflowHorizontalDirection::LEFT);
           } else if (id(hfixing).active_index() == 3) {
-            id(${device_name}_climate)
+            id(${device_name}climate)
                 .set_horizontal_airflow(
                     esphome::tclac::AirflowHorizontalDirection::CENTER);
           } else if (id(hfixing).active_index() == 4) {
-            id(${device_name}_climate)
+            id(${device_name}climate)
                 .set_horizontal_airflow(
                     esphome::tclac::AirflowHorizontalDirection::RIGHT);
           } else if (id(hfixing).active_index() == 5) {
-            id(${device_name}_climate)
+            id(${device_name}climate)
                 .set_horizontal_airflow(
                     esphome::tclac::AirflowHorizontalDirection::MAX_RIGHT);
           }
 
 climate:
   - platform: tclac
-    name: "${device_name}"
-    id: ${device_name}_climate
+    name: "${friendly_name}"
+    id: ${device_name}climate
