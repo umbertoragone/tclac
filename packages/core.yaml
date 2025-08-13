@@ -8,7 +8,7 @@ external_components:
       url: https://github.com/I-am-nightingale/tclac.git
       type: git
       ref: master
-    components: [tclac]
+    components: [ tclac ]
     refresh: 30s
 
 # ESPHome Configuration
